@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->string('comment', 500);
             $table->ipAddress('ip_address');
             $table->foreignId('book_id');
             $table->timestamps();

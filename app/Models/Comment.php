@@ -16,6 +16,8 @@ class Comment extends Model
      */
     protected $fillable = [
         'ip_address',
+        'comment',
+        'book_id',
     ];
 
     /**
