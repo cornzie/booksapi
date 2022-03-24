@@ -13,7 +13,7 @@
 |
 */
 
-$router->get('/', 'BookAPIController@index'); // docs
+$router->get('/', 'BookAPIController@index'); // base
 
 $router->get('/books', 'BookController@index'); // get all books
 $router->get('/books/{book}', 'BookController@find'); // get a book
