@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "9820bd79-4803-4901-836c-04f212698e95",
+		"name": "booksapi",
+		"description": "An API that formats and returns nice results from the *https://www.anapioficeandfire.com/*",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/books",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"books"
+					]
+				},
+				"description": "Get all books from the https://www.anapioficeandfire.com/ API"
+			},
+			"response": []
+		},
+		{
+			"name": "All Characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/characters",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"characters"
+					]
+				},
+				"description": "Get all the characters from the https://www.anapioficeandfire.com/ API with cool filtering options."
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Characters by gender, order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/characters?gender=male&order=DESC",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "male",
+							"description": "male or female"
+						},
+						{
+							"key": "order",
+							"value": "DESC",
+							"description": "ASC or DESC"
+						}
+					]
+				},
+				"description": "Here's an example of how to filter the `character` results"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Characters by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/characters?name=Walder",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Walder",
+							"description": "name of character"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment\" : \"This is yet another nice book\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/books/10/comments",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"books",
+						"10",
+						"comments"
+					]
+				},
+				"description": "Post an anonymous comment about a book."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Book's Comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/books/12/comments",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"books",
+						"12",
+						"comments"
+					]
+				},
+				"description": "Fetch comments for a book."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "booksapi.test",
+			"type": "string"
+		}
+	]
+}
