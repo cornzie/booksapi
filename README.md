@@ -1,5 +1,5 @@
 # booksapi Documentation
-An API that formats and returns nice results from the https://www.anapioficeandfire.com/
+An API that formats and returns nice results from the https://www.anapioficeandfire.com/ powered by Laravel Lumen
 
 > ***Note that you can import the postman collection into your postman for a better view of this documentation, plus sample requests.***
 
@@ -116,3 +116,43 @@ Post an anonymous comment about a book.
 
 Fetch comments for a book.
 `https://cryptic-mesa-82506.herokuapp.com/books/12/comments`
+
+# Setup Locally
+
+To setup locally, you would need to ensure you have the standard Laravel Lumen Server requirements or use Home stead.
+Essentially you will need to make sure your server meets the following requirements:
+
+>PHP >= 7.1.3
+>OpenSSL PHP Extension
+>PDO PHP Extension
+>Mbstring PHP Extension
+
+Then run the following commands
+
+```
+# 1
+git clone https://github.com/cornzie/booksapi.git
+
+# 2
+# cd into your cloned directory
+
+# 3
+composer install
+
+# 4
+cp .env.example .env
+
+# 5
+# set an environment key in .env APP_KEY. any random string would work, but Ideally 32 characters long is recommended
+# Setup a database and fill out the values for the DB in .env
+
+# 6
+php artisan migrate
+
+# 7 - run the App
+# if you do not have Laravel Valet or Homestead 
+# php -S localhost:8000 -t public
+
+```
+
+> ***A postman collection is included in the root of this app, so feel free to import it and test away!***
