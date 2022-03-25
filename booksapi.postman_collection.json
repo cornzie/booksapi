@@ -48,7 +48,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base}}/characters?gender=male&order=DESC",
+					"raw": "{{base}}/characters?gender=female&order=DESC",
 					"host": [
 						"{{base}}"
 					],
@@ -58,7 +58,7 @@
 					"query": [
 						{
 							"key": "gender",
-							"value": "male",
+							"value": "female",
 							"description": "male or female"
 						},
 						{
@@ -131,13 +131,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base}}/books/12/comments",
+					"raw": "{{base}}/books/10/comments",
 					"host": [
 						"{{base}}"
 					],
 					"path": [
 						"books",
-						"12",
+						"10",
 						"comments"
 					]
 				},
@@ -168,8 +168,13 @@
 	],
 	"variable": [
 		{
-			"key": "base",
+			"key": "base_test",
 			"value": "booksapi.test",
+			"type": "string"
+		},
+		{
+			"key": "base",
+			"value": "https://cryptic-mesa-82506.herokuapp.com",
 			"type": "string"
 		}
 	]
