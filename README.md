@@ -3,6 +3,69 @@ An API that formats and returns nice results from the https://www.anapioficeandf
 
 > ***Note that you can import the postman collection into your postman for a better view of this documentation, plus sample requests.***
 
+# Responses
+
+All API endpoints will respond with and object containing `status` (which will have a string value of `'error'` || `'success'`) and `data` (an object or an array of objects) properties. But it is recommended to check
+
+Sample response:
+
+```
+{
+    "status": "success",
+    "data": {
+        "characters": [
+            {
+                "url": "https://www.anapioficeandfire.com/api/characters/2",
+                "name": "Walder",
+                "gender": "Male",
+                "culture": "",
+                "born": "",
+                "died": "",
+                "titles": [
+                    ""
+                ],
+                "aliases": [
+                    "Hodor"
+                ],
+                "father": "",
+                "mother": "",
+                "spouse": "",
+                "allegiances": [
+                    "https://www.anapioficeandfire.com/api/houses/362"
+                ],
+                "books": [
+                    "https://www.anapioficeandfire.com/api/books/1",
+                    "https://www.anapioficeandfire.com/api/books/2",
+                    "https://www.anapioficeandfire.com/api/books/3",
+                    "https://www.anapioficeandfire.com/api/books/5",
+                    "https://www.anapioficeandfire.com/api/books/8"
+                ],
+                "povBooks": [],
+                "tvSeries": [
+                    "Season 1",
+                    "Season 2",
+                    "Season 3",
+                    "Season 4",
+                    "Season 6"
+                ],
+                "playedBy": [
+                    "Kristian Nairn"
+                ]
+            }
+        ],
+        "meta": {
+            "current_result_count": 1,
+            "total": 1,
+            "links": [
+                "<https://www.anapioficeandfire.com/api/characters?name=Walder&page=1&pageSize=50>; rel=\"first\", <https://www.anapioficeandfire.com/api/characters?name=Walder&page=1&pageSize=50>; rel=\"last\""
+            ]
+        }
+    }
+}
+
+```
+# Endpoints
+
 ## `GET` All Books
 
 `https://cryptic-mesa-82506.herokuapp.com/books`
