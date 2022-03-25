@@ -29,15 +29,15 @@ trait CharacterService
 
             $lastPage = (int) explode('=', explode('&', substr(strrchr($response['header'][0], ','), 1))[1])[1];
 
-            $characters = collect($response);
+            $characters = collect($response['body']);
 
             $characters = $order === 'ASC' ? $characters->sortBy('name') : $characters->sortByDESC('name');
-            
             return [
                 'characters' => $characters->values()->all(),
                 'meta' => [
-                    'current_result_count' => $characters->count()-1,
-                    'total' => ($characters->count()-1) < $pageSize ? ($characters->count()-1) : $lastPage*50,
+                    'current_result_count' => $characters->count(),
+                    'total' => ($characters->count()) < $pageSize ? ($characters->count()) : $lastPage*50,
+                    'links' => $response['header'],
                     ]
                 ];
         }
